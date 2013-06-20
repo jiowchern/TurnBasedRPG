@@ -1,0 +1,231 @@
+fileFormatVersion: 2
+guid: 7b5ac5092a0d05a488cf8ecb8d190083
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: glass_bone
+    100002: Aillarger_A_Bip001 R Calf
+    100004: Aillarger_A_Bip001 R Thigh
+    100006: Aillarger_A_Bip001 L Foot
+    100008: Aillarger_A_Bip001 L Calf
+    100010: Aillarger_A_Bip001 R Toe0
+    100012: Aillarger_A_Bip001 R Foot
+    100014: Object001
+    100016: willarge_A_girl
+    100018: Aillarger_A_Bip001 L Hand
+    100020: Aillarger_A_Bip001 L Forearm
+    100022: Aillarger_A_Bip001 L UpperArm
+    100024: L_chest_end
+    100026: Aillarger_A_Bip001 R Finger2
+    100028: Aillarger_A_Bip001 R Finger1Nub
+    100030: Aillarger_A_Bip001 L Finger0Nub
+    100032: Aillarger_A_Bip001 L Finger01
+    100034: Aillarger_A_Bip001 L Finger0
+    100036: LF_scult_02
+    100038: LF_scult_01
+    100040: Aillarger_A_Bip001 Ponytail11
+    100042: Aillarger_A_Bip001 Ponytail1
+    100044: R_scult_01
+    100046: RF_scult_end
+    100048: LB_scult_02
+    100050: Aillarger_A_Bip001 Ponytail17
+    100052: Aillarger_A_Bip001 Ponytail16
+    100054: Aillarger_A_Bip001 L Finger1Nub
+    100056: Aillarger_A_Bip001 L Finger11
+    100058: Aillarger_A_Bip001 L Finger1
+    100060: L_scult_end
+    100062: L_scult_02
+    100064: glass_born_end
+    100066: Aillarger_A_Bip001 L Clavicle
+    100068: Aillarger_A_Bip001 Neck
+    100070: Aillarger_A_Bip001 Spine2
+    100072: Aillarger_A_Bip001 R Forearm
+    100074: Aillarger_A_Bip001 R UpperArm
+    100076: Aillarger_A_Bip001 R Clavicle
+    100078: Aillarger_A_Bip001 L Finger2Nub
+    100080: Aillarger_A_Bip001 L Finger21
+    100082: Aillarger_A_Bip001 L Finger2
+    100084: Aillarger_A_Bip001 R Finger0
+    100086: Aillarger_A_Bip001 R Hand
+    100088: Aillarger_A_Bip001 R Finger11
+    100090: Aillarger_A_Bip001 R Finger1
+    100092: RF_scult_02
+    100094: R_chest_end
+    100096: R_chest_01
+    100098: Aillarger_A_Bip001 R Finger2Nub
+    100100: Aillarger_A_Bip001 R Finger21
+    100102: scult_acc
+    100104: RF_scult_01
+    100106: Aillarger_A_Bip001 Footsteps
+    100108: Aillarger_A_Bip001
+    100110: //RootNode
+    100112: Aillarger_A_Bip001 R Toe0Nub
+    100114: RB_scult_01
+    100116: L_chest_01
+    100118: Aillarger_A_Bip001 L Toe0Nub
+    100120: Aillarger_A_Bip001 L Toe0
+    100122: arm_acc
+    100124: LB_scult_01
+    100126: Aillarger_A_Bip001 HeadNub
+    100128: Aillarger_A_Bip001 Head
+    100130: Aillarger_A_Bip001 L Thigh
+    100132: Aillarger_A_Bip001 Ponytail1Nub
+    100134: Aillarger_A_Bip001 Ponytail13
+    100136: Aillarger_A_Bip001 Ponytail12
+    100138: Aillarger_A_Bip001 R Finger0Nub
+    100140: Aillarger_A_Bip001 R Finger01
+    100142: LF_scult_end
+    100144: Aillarger_A_Bip001 Spine1
+    100146: Aillarger_A_Bip001 Spine
+    100148: Aillarger_A_Bip001 Pelvis
+    100150: Aillarger_A_Bip001 Ponytail15
+    100152: Aillarger_A_Bip001 Ponytail14
+    100154: R_scult_end
+    100156: R_scult_02
+    100158: L_scult_01
+    100160: RB_scult_end
+    100162: RB_scult_02
+    100164: LB_scult_end
+    400000: glass_bone
+    400002: Aillarger_A_Bip001 R Calf
+    400004: Aillarger_A_Bip001 R Thigh
+    400006: Aillarger_A_Bip001 L Foot
+    400008: Aillarger_A_Bip001 L Calf
+    400010: Aillarger_A_Bip001 R Toe0
+    400012: Aillarger_A_Bip001 R Foot
+    400014: Object001
+    400016: willarge_A_girl
+    400018: Aillarger_A_Bip001 L Hand
+    400020: Aillarger_A_Bip001 L Forearm
+    400022: Aillarger_A_Bip001 L UpperArm
+    400024: L_chest_end
+    400026: Aillarger_A_Bip001 R Finger2
+    400028: Aillarger_A_Bip001 R Finger1Nub
+    400030: Aillarger_A_Bip001 L Finger0Nub
+    400032: Aillarger_A_Bip001 L Finger01
+    400034: Aillarger_A_Bip001 L Finger0
+    400036: LF_scult_02
+    400038: LF_scult_01
+    400040: Aillarger_A_Bip001 Ponytail11
+    400042: Aillarger_A_Bip001 Ponytail1
+    400044: R_scult_01
+    400046: RF_scult_end
+    400048: LB_scult_02
+    400050: Aillarger_A_Bip001 Ponytail17
+    400052: Aillarger_A_Bip001 Ponytail16
+    400054: Aillarger_A_Bip001 L Finger1Nub
+    400056: Aillarger_A_Bip001 L Finger11
+    400058: Aillarger_A_Bip001 L Finger1
+    400060: L_scult_end
+    400062: L_scult_02
+    400064: glass_born_end
+    400066: Aillarger_A_Bip001 L Clavicle
+    400068: Aillarger_A_Bip001 Neck
+    400070: Aillarger_A_Bip001 Spine2
+    400072: Aillarger_A_Bip001 R Forearm
+    400074: Aillarger_A_Bip001 R UpperArm
+    400076: Aillarger_A_Bip001 R Clavicle
+    400078: Aillarger_A_Bip001 L Finger2Nub
+    400080: Aillarger_A_Bip001 L Finger21
+    400082: Aillarger_A_Bip001 L Finger2
+    400084: Aillarger_A_Bip001 R Finger0
+    400086: Aillarger_A_Bip001 R Hand
+    400088: Aillarger_A_Bip001 R Finger11
+    400090: Aillarger_A_Bip001 R Finger1
+    400092: RF_scult_02
+    400094: R_chest_end
+    400096: R_chest_01
+    400098: Aillarger_A_Bip001 R Finger2Nub
+    400100: Aillarger_A_Bip001 R Finger21
+    400102: scult_acc
+    400104: RF_scult_01
+    400106: Aillarger_A_Bip001 Footsteps
+    400108: Aillarger_A_Bip001
+    400110: //RootNode
+    400112: Aillarger_A_Bip001 R Toe0Nub
+    400114: RB_scult_01
+    400116: L_chest_01
+    400118: Aillarger_A_Bip001 L Toe0Nub
+    400120: Aillarger_A_Bip001 L Toe0
+    400122: arm_acc
+    400124: LB_scult_01
+    400126: Aillarger_A_Bip001 HeadNub
+    400128: Aillarger_A_Bip001 Head
+    400130: Aillarger_A_Bip001 L Thigh
+    400132: Aillarger_A_Bip001 Ponytail1Nub
+    400134: Aillarger_A_Bip001 Ponytail13
+    400136: Aillarger_A_Bip001 Ponytail12
+    400138: Aillarger_A_Bip001 R Finger0Nub
+    400140: Aillarger_A_Bip001 R Finger01
+    400142: LF_scult_end
+    400144: Aillarger_A_Bip001 Spine1
+    400146: Aillarger_A_Bip001 Spine
+    400148: Aillarger_A_Bip001 Pelvis
+    400150: Aillarger_A_Bip001 Ponytail15
+    400152: Aillarger_A_Bip001 Ponytail14
+    400154: R_scult_end
+    400156: R_scult_02
+    400158: L_scult_01
+    400160: RB_scult_end
+    400162: RB_scult_02
+    400164: LB_scult_end
+    4300000: willarge_A_girl
+    4300002: Object001
+    4300004: scult_acc
+    4300006: arm_acc
+    7400000: Take 001
+    11100000: //RootNode
+    13700000: Object001
+    13700002: willarge_A_girl
+    13700004: scult_acc
+    13700006: arm_acc
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 1
+  userData: 
