@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     }
 	// Use this for initialization
     Regulus.Project.TurnBasedRPG.ActorMoverAbility _ActorMoverAbility;
-    Samebest.Remoting.Time _Time;
+    
 	void Start () 
     {
         _ActorMoverAbility = new Regulus.Project.TurnBasedRPG.ActorMoverAbility(_GamePlayer.Direction);
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
         _ActorMoverAbility.PositionEvent += _UpdatePosition;
 
         Main main = GameObject.Find("Main").GetComponent<Main>();
-        _Time = main.Time;
+    
 	}
 
     void _StartAction(long begin_time, float speed, float direction, Regulus.Types.Vector2 vector, Regulus.Project.TurnBasedRPG.ActionStatue action_status)
@@ -96,17 +96,17 @@ public class Player : MonoBehaviour
     {
         var mcps = new MoveCommandParam[] 
         {
-            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Run , Direction = 360-20 , Speed = 1},
+            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Run , Direction = 360-18 , Speed = 1},
             new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Run , Direction = 0 , Speed = 1},
-            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Run , Direction = 20 , Speed = 1},
+            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Run , Direction = 18 , Speed = 1},
 
-            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 360-90 , Speed = 0},
+            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 360-45 , Speed = 0},
             new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 0 , Speed = 0},
-            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 90 , Speed = 0},
+            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 45 , Speed = 0},
 
-            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 180-20 , Speed = 0},
+            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 180-18 , Speed = 0},
             new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 180 , Speed = 0},
-            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 180+20 , Speed = 0},
+            new MoveCommandParam() { ActionStatus = Regulus.Project.TurnBasedRPG.ActionStatue.Idle , Direction = 180+18 , Speed = 0},
         };
         return mcps[(int)md];
     }

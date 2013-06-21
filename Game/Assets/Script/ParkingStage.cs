@@ -39,9 +39,13 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         void val_OnValue(Serializable.EntityLookInfomation[] obj)
         {
             _Actors = obj;
+            if (_Actors.Length > 1)
+            {
+                _Actor = _Actors[0].Name;
+            }
         }
 
-        string _Actor ="名稱";
+        string _Actor ="輸入名稱";
         void _InfoGame()
         {
             if (_Parking != null)
@@ -98,7 +102,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         void Samebest.Game.IStage<Main>.Leave(Main obj)
         {
-            UnityEngine.Debug.Log("ParkingStage : void Samebest.Game.IStage<Main>.Leave(Main obj)");
+            
 
             var notif = obj.User.ParkingProvider;            
             obj.DrawEvent -= obj_DrawEvent;

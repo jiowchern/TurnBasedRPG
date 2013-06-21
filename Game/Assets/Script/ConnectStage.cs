@@ -11,15 +11,16 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         public ConnectStage()
         {        
+
         }
 
         void Samebest.Game.IStage<Main>.Enter(Main obj)
         {
             obj.User.LinkSuccess += _UserLinkSuccess;
             obj.User.LinkFail += _UserLinkFail;
-            obj.StartConnect();
-
             obj.DrawEvent += obj_DrawEvent;
+            obj.StartConnect();
+            string _StatusMessage = "StartConnect...";
         }
 
         string _StatusMessage = "開始連線...";

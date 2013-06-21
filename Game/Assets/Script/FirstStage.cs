@@ -7,8 +7,8 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 {
     class FirstStage :  Samebest.Game.IStage<Main>
     {
-        private string _Account = "1234567890";
-        private string _Password = "1234567890";
+        private string _Account = "輸入帳號";
+        private string _Password = "輸入密碼";
 
         void Samebest.Game.IStage<Main>.Enter(Main obj)
         {

@@ -72,9 +72,9 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         
 
-        string _PositionX = "0";
-        string _PositionY = "0";
-        string _Vision = "0";
+        string _PositionX = "-----";
+        string _PositionY = "-----";
+        string _Vision = "-----";
         string _Speed = "-----"; 
         void obj_DrawEvent()
         {
@@ -122,6 +122,18 @@ namespace Regulus.Project.TurnBasedRPG.Unity
                     _Player.SetSpeed(val);
             }
             UnityEngine.GUILayout.EndHorizontal();
+
+            UnityEngine.GUILayout.BeginVertical();
+
+            foreach (ActionStatue actionStatue in Enum.GetValues(typeof(ActionStatue)))
+            {
+                if (UnityEngine.GUILayout.Button(actionStatue.ToString()))
+                {
+                    _Player.BodyMovements(actionStatue);
+                }
+            }
+
+            UnityEngine.GUILayout.EndVertical();
         }
         IPlayer _Player;
         Main _Main;

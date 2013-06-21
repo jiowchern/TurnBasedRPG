@@ -11,8 +11,8 @@ public class Main : MonoBehaviour
     public string IpAddress;
 	void Start () 
     {
-        IpAddress = "114.34.90.217:5055";
-        //IpAddress = "127.0.0.1:5055";
+        //IpAddress = "114.34.90.217:5055";
+        IpAddress = "127.0.0.1:5055";
         User = new Regulus.Project.TurnBasedRPG.User(new Samebest.Remoting.Ghost.Config() { Address = IpAddress , Name = "TurnBasedRPGComplex" });
         
         _StageMachine = new Samebest.Game.StageMachine<Main>(this);        
@@ -34,7 +34,9 @@ public class Main : MonoBehaviour
             DrawEvent();
 
         UnityEngine.GUILayout.BeginHorizontal();
-        UnityEngine.GUILayout.Label(IpAddress);    
+        UnityEngine.GUILayout.Label(IpAddress);
+        if (User != null)
+            UnityEngine.GUILayout.Label("Ping : " + new System.TimeSpan(User.GetPing(0)).TotalMilliseconds.ToString() + "ms"); 
         UnityEngine.GUILayout.EndHorizontal();
     }
 	
@@ -117,44 +119,40 @@ public class Main : MonoBehaviour
     }
 
     public GameObject Entity;
-    public GameObject Player;
+    
     internal void OnEntityInto(Regulus.Project.TurnBasedRPG.IObservedAbility obj)
     {
+        Debug.Log("internal void OnEntityInto(Regulus.Project.TurnBasedRPG.IObservedAbility obj)");
+        GameObject eo = UnityEngine.GameObject.Instantiate(Entity) as GameObject;
+        var ent = eo.GetComponent<Entity>();
+        ent.Info = obj;
 
+        var ac = eo.GetComponent<ActorController>();
+        ac.Info = obj;
+        ac.Map = GetComponent<Map>();
 
-        if (true)
+        if (Id == obj.Id)
         {
-            GameObject eo = UnityEngine.GameObject.Instantiate(Entity) as GameObject;
-            var ent = eo.GetComponent<Entity>();
-            ent.Info = obj;
+            var plr = eo.AddComponent<Player>();                
+            plr._GamePlayer = _Player;
 
-            var ac = eo.GetComponent<ActorController>();
-            ac.Info = obj;
-            ac.Map = GetComponent<Map>();
-
-            if (Id == obj.Id)
-            {
-                var plr = eo.AddComponent<Player>();                
-                plr._GamePlayer = _Player;
-
-                var camera = UnityEngine.GameObject.FindWithTag("MainCamera");
-                SmoothFollow smoothFollow = camera.GetComponent<SmoothFollow>();
-                smoothFollow.target = eo.transform;
-            }
+            var camera = UnityEngine.GameObject.FindWithTag("MainCamera");
+            SmoothFollow smoothFollow = camera.GetComponent<SmoothFollow>();
+            smoothFollow.target = eo.transform;
         }
-        
-            
         
     }
 
     internal void OnEntityLeft(Regulus.Project.TurnBasedRPG.IObservedAbility obj)
-    {        
+    {
+        Debug.Log("OnEntityLeft");
         var entityObjects = from eo in UnityEngine.GameObject.FindGameObjectsWithTag("Entity")
                             let info = eo.GetComponent<Entity>().Info
-                            where info == obj
+                            where info.Id == obj.Id
                             select eo;
         foreach (var eo in entityObjects)
         {
+            Debug.Log("OnEntityLeft Remove");
             UnityEngine.GameObject.DestroyObject(eo);
         }        
     }

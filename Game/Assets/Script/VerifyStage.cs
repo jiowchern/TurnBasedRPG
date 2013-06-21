@@ -20,19 +20,31 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         void Samebest.Game.IStage<Main>.Enter(Main obj)
         {
             obj.User.VerifyProvider.Supply += VerifyProvider_Supply;
+            obj.DrawEvent += obj_DrawEvent;
+
+            _Message = "接收驗證元件...";
+        }
+        string _Message = "------------";
+        void obj_DrawEvent()
+        {
+            UnityEngine.GUILayout.BeginVertical();
+            UnityEngine.GUILayout.Label(_Message);
+            UnityEngine.GUILayout.EndVertical();
         }
 
         void VerifyProvider_Supply(IVerify obj)
         {
+            _Message = "取得驗證元件...";
             var val = obj.Login(_Account, _Password);
             val.OnValue += val_OnValue;
         }
         public event Action<bool> VerifyResultEvent;
         void val_OnValue(LoginResult obj)
         {
+            _Message = "驗證結果..." + obj.ToString();
             if (VerifyResultEvent != null)
                 if (obj == LoginResult.Error)
-                {
+                {                    
                     VerifyResultEvent(false);                       
                 }
                 else if (obj == LoginResult.RepeatLogin)
@@ -47,7 +59,9 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         void Samebest.Game.IStage<Main>.Leave(Main obj)
         {
+            _Message = "驗證結束." + obj.ToString();
             obj.User.VerifyProvider.Supply -= VerifyProvider_Supply;
+            obj.DrawEvent -= obj_DrawEvent;
         }
 
         void Samebest.Game.IStage<Main>.Update(Main obj)

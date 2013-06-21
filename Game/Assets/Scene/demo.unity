@@ -3935,7 +3935,6 @@ MonoBehaviour:
   m_Name: 
   IpAddress: 
   Entity: {fileID: 100166, guid: 29089196bd0ea8044bc34a62d71e9245, type: 2}
-  Player: {fileID: 100088, guid: 364885c25b2912145b940b25b2276fc1, type: 2}
 --- !u!114 &80630560
 MonoBehaviour:
   m_ObjectHideFlags: 0

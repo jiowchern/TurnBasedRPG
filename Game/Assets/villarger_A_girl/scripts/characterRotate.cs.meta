@@ -1,9 +1,0 @@
-fileFormatVersion: 2
-guid: 53bb274f24bc90241bbdf623a07ce0c9
-MonoImporter:
-  serializedVersion: 2
-  defaultReferences:
-  - frog: {fileID: 100014, guid: 866198777d6559d4eac68755d86202e4, type: 3}
-  executionOrder: 0
-  icon: {instanceID: 0}
-  userData: 
