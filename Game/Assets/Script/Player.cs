@@ -74,14 +74,17 @@ public class Player : MonoBehaviour
         var h = Input.GetAxis("Horizontal");
 
         MoveDirection md = _GetMoveDirection(v , h);
+
         if (md != _Current)
         {
             MoveCommandParam mcp = _GetMoveCommandParam(md);
             //(_ActorMoverAbility as Regulus.Project.TurnBasedRPG.IMoverAbility).Act(mcp.ActionStatus, _GamePlayer.Speed * mcp.Speed, mcp.Direction);
             _Current = md;
 
+            Debug.Log("°õ¦æ°Ê§@ : " + md.ToString());
             if (mcp.ActionStatus == Regulus.Project.TurnBasedRPG.ActionStatue.Idle)
             {
+                
                 _GamePlayer.Stop(mcp.Direction);
             }
             else
