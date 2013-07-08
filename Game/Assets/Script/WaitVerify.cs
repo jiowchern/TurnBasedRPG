@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class WaitVerify : Samebest.Game.IStage<Main>
+    class WaitVerify : Regulus.Game.IStage<Main>
     {
         string _StatusMessage;
         public string StatusMessage 
@@ -22,17 +22,17 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         }
         private string _Account = "1234567890";
         private string _Password = "1234567890";
-        Samebest.Game.StageMachine<WaitVerify> _StageMachine;
+        Regulus.Game.StageMachine<WaitVerify> _StageMachine;
 
         public WaitVerify(string account, string password)
         {
             _Account = account;
             _Password = password;
         }
-        void Samebest.Game.IStage<Main>.Enter(Main obj)
+        void Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             obj.DrawEvent += obj_DrawEvent;
-            _StageMachine = new Samebest.Game.StageMachine<WaitVerify>(this);
+            _StageMachine = new Regulus.Game.StageMachine<WaitVerify>(this);
             _StageMachine.Push(new Regulus.Project.TurnBasedRPG.Unity.UserConnect(obj));
         }
 
@@ -43,13 +43,13 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             UnityEngine.GUILayout.EndVertical();
         }
 
-        void Samebest.Game.IStage<Main>.Leave(Main obj)
+        void Regulus.Game.IStage<Main>.Leave(Main obj)
         {
             obj.DrawEvent -= obj_DrawEvent;
             _StageMachine.Termination();
         }
 
-        void Samebest.Game.IStage<Main>.Update(Main obj)
+        void Regulus.Game.IStage<Main>.Update(Main obj)
         {
             _StageMachine.Update();
         }

@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class ParkingStage :   Samebest.Game.IStage<Main>
+    class ParkingStage :   Regulus.Game.IStage<Main>
     {
         Serializable.EntityLookInfomation[] _Actors = new Serializable.EntityLookInfomation[0];
         Action<Regulus.Project.TurnBasedRPG.IParking> _QueryActors;
         Regulus.Project.TurnBasedRPG.IParking _Parking;
-        void Samebest.Game.IStage<Main>.Enter(Main obj)
+        void Regulus.Game.IStage<Main>.Enter(Main obj)
         {
                         
             obj.DrawEvent += obj_DrawEvent;
@@ -100,7 +100,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             }
         }
 
-        void Samebest.Game.IStage<Main>.Leave(Main obj)
+        void Regulus.Game.IStage<Main>.Leave(Main obj)
         {
             
 
@@ -110,7 +110,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             
         }
 
-        void Samebest.Game.IStage<Main>.Update(Main obj)
+        void Regulus.Game.IStage<Main>.Update(Main obj)
         {
             if (_SelectActor)
             {

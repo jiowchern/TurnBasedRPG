@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class UserConnect : Samebest.Game.IStage<WaitVerify>
+    class UserConnect : Regulus.Game.IStage<WaitVerify>
     {
         
         private Main _Main;
@@ -16,7 +16,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             _Main = obj;
         }
         
-        void Samebest.Game.IStage<WaitVerify>.Enter(WaitVerify obj)
+        void Regulus.Game.IStage<WaitVerify>.Enter(WaitVerify obj)
         {
             _UserLinkSuccess = () =>
             {                
@@ -41,13 +41,13 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         Action _UserLinkSuccess;
         Action<string> _UserLinkFail;
 
-        void Samebest.Game.IStage<WaitVerify>.Leave(WaitVerify obj)
+        void Regulus.Game.IStage<WaitVerify>.Leave(WaitVerify obj)
         {
             _Main.User.LinkSuccess -= _UserLinkSuccess;
             _Main.User.LinkFail -= _UserLinkFail;
         }
 
-        void Samebest.Game.IStage<WaitVerify>.Update(WaitVerify obj)
+        void Regulus.Game.IStage<WaitVerify>.Update(WaitVerify obj)
         {
             
         }

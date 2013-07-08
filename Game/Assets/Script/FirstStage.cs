@@ -5,12 +5,12 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class FirstStage :  Samebest.Game.IStage<Main>
+    class FirstStage :  Regulus.Game.IStage<Main>
     {
         private string _Account = "輸入帳號";
         private string _Password = "輸入密碼";
 
-        void Samebest.Game.IStage<Main>.Enter(Main obj)
+        void Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             _InputAccount = () =>
             {
@@ -42,12 +42,12 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         }
         
         Action _InputAccount;
-        void Samebest.Game.IStage<Main>.Leave(Main obj)
+        void Regulus.Game.IStage<Main>.Leave(Main obj)
         {
             obj.DrawEvent -= _InputAccount;
         }
 
-        void Samebest.Game.IStage<Main>.Update(Main obj)
+        void Regulus.Game.IStage<Main>.Update(Main obj)
         {
             
         }

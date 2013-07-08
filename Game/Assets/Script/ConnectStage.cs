@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class ConnectStage : Samebest.Game.IStage<Main>
+    class ConnectStage : Regulus.Game.IStage<Main>
     {
         
 
@@ -14,7 +14,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         }
 
-        void Samebest.Game.IStage<Main>.Enter(Main obj)
+        void Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             obj.User.LinkSuccess += _UserLinkSuccess;
             obj.User.LinkFail += _UserLinkFail;
@@ -47,14 +47,14 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         }
 
-        void Samebest.Game.IStage<Main>.Leave(Main obj)
+        void Regulus.Game.IStage<Main>.Leave(Main obj)
         {
             obj.User.LinkSuccess -= _UserLinkSuccess;
             obj.User.LinkFail -= _UserLinkFail;
             obj.DrawEvent -= obj_DrawEvent;
         }
 
-        void Samebest.Game.IStage<Main>.Update(Main obj)
+        void Regulus.Game.IStage<Main>.Update(Main obj)
         {
             
         }

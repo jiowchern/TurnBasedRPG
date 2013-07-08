@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class VerifyStage : Samebest.Game.IStage<Main>
+    class VerifyStage : Regulus.Game.IStage<Main>
     {
         private string _Account;
         private string _Password;
@@ -17,7 +17,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             this._Password = _Password;
         }
 
-        void Samebest.Game.IStage<Main>.Enter(Main obj)
+        void Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             obj.User.VerifyProvider.Supply += VerifyProvider_Supply;
             obj.DrawEvent += obj_DrawEvent;
@@ -57,14 +57,14 @@ namespace Regulus.Project.TurnBasedRPG.Unity
                 }
         }
 
-        void Samebest.Game.IStage<Main>.Leave(Main obj)
+        void Regulus.Game.IStage<Main>.Leave(Main obj)
         {
             _Message = "驗證結束." + obj.ToString();
             obj.User.VerifyProvider.Supply -= VerifyProvider_Supply;
             obj.DrawEvent -= obj_DrawEvent;
         }
 
-        void Samebest.Game.IStage<Main>.Update(Main obj)
+        void Regulus.Game.IStage<Main>.Update(Main obj)
         {
             
         }

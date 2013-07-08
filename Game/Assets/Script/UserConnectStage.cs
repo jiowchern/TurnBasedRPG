@@ -5,20 +5,20 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class UserConnectStage : Samebest.Game.IStage<Regulus.Project.TurnBasedRPG.User>
+    class UserConnectStage : Regulus.Game.IStage<Regulus.Project.TurnBasedRPG.User>
     {
-        void Samebest.Game.IStage<User>.Enter(User obj)
+        void Regulus.Game.IStage<User>.Enter(User obj)
         {
             var fm = obj;
             fm.Launch();
         }
 
-        void Samebest.Game.IStage<User>.Leave(User obj)
+        void Regulus.Game.IStage<User>.Leave(User obj)
         {
             throw new NotImplementedException();
         }
 
-        void Samebest.Game.IStage<User>.Update(User obj)
+        void Regulus.Game.IStage<User>.Update(User obj)
         {
             throw new NotImplementedException();
         }

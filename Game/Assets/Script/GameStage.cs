@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class GameStage : Samebest.Game.IStage<Main>
+    class GameStage : Regulus.Game.IStage<Main>
     {
-        void Samebest.Game.IStage<Main>.Enter(Main obj)
+        void Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             _Main = obj;
 
@@ -20,23 +20,23 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             obj.DrawEvent += obj_DrawEvent;
         }
 
-        private void _Bind(Samebest.Remoting.Ghost.IProviderNotice<Samebest.Remoting.ITime> providerNotice)
+        private void _Bind(Regulus.Remoting.Ghost.IProviderNotice<Regulus.Remoting.ITime> providerNotice)
         {
             providerNotice.Supply += _TimeSupply;
             providerNotice.Unsupply += _TimeUnsupply;
         }
 
-        private void _TimeUnsupply(Samebest.Remoting.ITime obj)
+        private void _TimeUnsupply(Regulus.Remoting.ITime obj)
         {
             _Main.ResetTime();
         }
 
-        private void _TimeSupply(Samebest.Remoting.ITime obj)
+        private void _TimeSupply(Regulus.Remoting.ITime obj)
         {
             _Main.SetTime(obj);
         }
 
-        private void _Bind(Samebest.Remoting.Ghost.IProviderNotice<IMapInfomation> providerNotice)
+        private void _Bind(Regulus.Remoting.Ghost.IProviderNotice<IMapInfomation> providerNotice)
         {
             providerNotice.Supply += _MapSupply;
             providerNotice.Unsupply += _MapUnsupply;
@@ -52,7 +52,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             _Main.SetMap(obj);
         }
 
-        private void _Bind(Samebest.Remoting.Ghost.IProviderNotice<IPlayer> noti)
+        private void _Bind(Regulus.Remoting.Ghost.IProviderNotice<IPlayer> noti)
         {
             if (noti.Ghosts.Length > 0)
             {
@@ -64,7 +64,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             }
         }
 
-        private void _Bind(Samebest.Remoting.Ghost.IProviderNotice<IObservedAbility> noti)
+        private void _Bind(Regulus.Remoting.Ghost.IProviderNotice<IObservedAbility> noti)
         {
             noti.Supply += _Main.OnEntityInto;
             noti.Unsupply += _Main.OnEntityLeft;
@@ -156,7 +156,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         
 
-        void Samebest.Game.IStage<Main>.Leave(Main obj)
+        void Regulus.Game.IStage<Main>.Leave(Main obj)
         {
 
             _Unbind(obj.User.PlayerProvider);
@@ -168,18 +168,18 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             _Release(obj);
         }
 
-        private void _Unbind(Samebest.Remoting.Ghost.IProviderNotice<IObservedAbility> noti)
+        private void _Unbind(Regulus.Remoting.Ghost.IProviderNotice<IObservedAbility> noti)
         {
             noti.Supply -= _Main.OnEntityInto;
             noti.Unsupply -= _Main.OnEntityLeft;
         }
 
-        private void _Unbind(Samebest.Remoting.Ghost.IProviderNotice<IPlayer> noti)
+        private void _Unbind(Regulus.Remoting.Ghost.IProviderNotice<IPlayer> noti)
         {
             noti.Supply -= _Initial;
         }
 
-        void Samebest.Game.IStage<Main>.Update(Main obj)
+        void Regulus.Game.IStage<Main>.Update(Main obj)
         {
             
         }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class UserVerify : Samebest.Game.IStage<WaitVerify>
+    class UserVerify : Regulus.Game.IStage<WaitVerify>
     {
         private string _Account;
         private string _Password;
@@ -19,7 +19,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         }
 
         Action<Regulus.Project.TurnBasedRPG.IVerify> _Verify;
-        void Samebest.Game.IStage<WaitVerify>.Enter(WaitVerify obj)
+        void Regulus.Game.IStage<WaitVerify>.Enter(WaitVerify obj)
         {
 
             
@@ -64,13 +64,13 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             }
         }
 
-        void Samebest.Game.IStage<WaitVerify>.Leave(WaitVerify obj)
+        void Regulus.Game.IStage<WaitVerify>.Leave(WaitVerify obj)
         {
             var notif = _Main.User.VerifyProvider;
             notif.Supply -= _Verify;
         }
 
-        void Samebest.Game.IStage<WaitVerify>.Update(WaitVerify obj)
+        void Regulus.Game.IStage<WaitVerify>.Update(WaitVerify obj)
         {
             
         }

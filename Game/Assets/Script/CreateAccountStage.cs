@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Regulus.Project.TurnBasedRPG.Unity
 {
-    class CreateAccountStage : Samebest.Game.IStage<Main>
+    class CreateAccountStage : Regulus.Game.IStage<Main>
     {
         private string _Account;
         private string _Password;
@@ -17,7 +17,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             _Password = password;
         }
 
-        void Samebest.Game.IStage<Main>.Enter(Main obj)
+        void Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             _Message = "接收驗證元件...";
             obj.User.VerifyProvider.Supply += VerifyProvider_Supply;
@@ -56,7 +56,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
                 CreateResult(obj);
         }
 
-        void Samebest.Game.IStage<Main>.Leave(Main obj)
+        void Regulus.Game.IStage<Main>.Leave(Main obj)
         {
             _Message = "結束驗證";
             obj.User.VerifyProvider.Supply -= VerifyProvider_Supply;
@@ -64,7 +64,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             obj.DrawEvent -= obj_DrawEvent;
         }
 
-        void Samebest.Game.IStage<Main>.Update(Main obj)
+        void Regulus.Game.IStage<Main>.Update(Main obj)
         {
             
         }

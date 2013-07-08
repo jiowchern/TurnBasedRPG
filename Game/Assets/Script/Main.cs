@@ -5,7 +5,7 @@ using System.Linq;
 public class Main : MonoBehaviour 
 {
     
-    Samebest.Game.StageMachine<Main> _StageMachine;
+    Regulus.Game.StageMachine<Main> _StageMachine;
     public Regulus.Project.TurnBasedRPG.User User {get;private set;}
     Regulus.Project.TurnBasedRPG.User _UserFramework;
     public string IpAddress;
@@ -13,9 +13,9 @@ public class Main : MonoBehaviour
     {
         IpAddress = "114.34.90.217:5055";
         //IpAddress = "127.0.0.1:5055";
-        User = new Regulus.Project.TurnBasedRPG.User(new Samebest.Remoting.Ghost.Config() { Address = IpAddress , Name = "TurnBasedRPGComplex" });
+        User = new Regulus.Project.TurnBasedRPG.User(new Regulus.Remoting.Ghost.Config() { Address = IpAddress , Name = "TurnBasedRPGComplex" });
         
-        _StageMachine = new Samebest.Game.StageMachine<Main>(this);        
+        _StageMachine = new Regulus.Game.StageMachine<Main>(this);        
         _UserFramework = User;
         User.LinkFail +=User_LinkFail;
         ToFirst();
@@ -175,16 +175,16 @@ public class Main : MonoBehaviour
     {
         GetComponent<Map>().Info = info;
     }
-    Samebest.Remoting.Time _Time = new Samebest.Remoting.Time();
+    Regulus.Remoting.Time _Time = new Regulus.Remoting.Time();
 
-    public Samebest.Remoting.Time Time { get { return _Time;  } }
-    internal void SetTime(Samebest.Remoting.ITime obj)
+    public Regulus.Remoting.Time Time { get { return _Time;  } }
+    internal void SetTime(Regulus.Remoting.ITime obj)
     {
-        _Time = new Samebest.Remoting.Time(obj);
+        _Time = new Regulus.Remoting.Time(obj);
     }
     internal void ResetTime()
     {
-        _Time = new Samebest.Remoting.Time();
+        _Time = new Regulus.Remoting.Time();
     }
 
     string _Account;
