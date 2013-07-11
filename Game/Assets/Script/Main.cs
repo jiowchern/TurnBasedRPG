@@ -17,7 +17,7 @@ public class Main : MonoBehaviour
         
         _StageMachine = new Regulus.Game.StageMachine<Main>(this);        
         _UserFramework = User;
-        User.LinkFail +=User_LinkFail;
+        User.LinkFail += User_LinkFail;
         ToFirst();
         
 	}
