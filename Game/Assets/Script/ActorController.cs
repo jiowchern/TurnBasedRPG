@@ -17,10 +17,8 @@ public class ActorController : MonoBehaviour {
         _Direction = UnityRegulus.Vector3(obj.MoveDirection);
         ActorAnimation.Play(obj.ActionStatue.ToString());
         Vector3 v = UnityRegulus.Vector3(obj.BeginPosition);
-        if (Vector3.Distance(gameObject.transform.position, v) > 1)
-        {
-            gameObject.transform.position = v;
-        }
+        gameObject.transform.position = v;
+        
         _Speed = obj.Speed;
 
         

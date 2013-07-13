@@ -68,6 +68,16 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         {
             noti.Supply += _Main.OnEntityInto;
             noti.Unsupply += _Main.OnEntityLeft;
+
+            noti.Supply += _ObservedAbility;
+        }
+
+        void _ObservedAbility(IObservedAbility obj)
+        {
+            obj.SayEvent += (message) => 
+            {
+                _Say(obj.Name, message);
+            };
         }
 
         
@@ -134,6 +144,50 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             }
 
             UnityEngine.GUILayout.EndVertical();
+
+            _InputSayMessage();
+            _ShowSayMessage();
+            
+        }
+
+        string _SayText = "";
+        private void _InputSayMessage()
+        {
+            UnityEngine.GUILayout.BeginHorizontal();
+
+            _SayText = UnityEngine.GUILayout.TextField(_SayText);
+            if (UnityEngine.GUILayout.Button("說"))
+            {
+                _SendSay(_SayText);
+                _SayText = "";
+            }
+
+            UnityEngine.GUILayout.EndHorizontal();
+        }
+
+        private void _SendSay(string say_text)
+        {
+            _Player.Say(say_text);
+        }
+
+        private void _Say(string id , string message)
+        {
+            _Says.Enqueue("["+id+"]:"+ message );
+            if (_Says.Count > 50)
+                _Says.Dequeue();
+        }
+
+        Queue<string> _Says = new Queue<string>();
+        UnityEngine.Vector2 _ScrollValue = new UnityEngine.Vector2();
+        private void _ShowSayMessage()
+        {
+            _ScrollValue = UnityEngine.GUILayout.BeginScrollView(_ScrollValue );
+            
+            foreach (var say in _Says.Reverse())
+            {
+                UnityEngine.GUILayout.Label(say);
+            }
+            UnityEngine.GUILayout.EndScrollView();
         }
         IPlayer _Player;
         Main _Main;
@@ -172,6 +226,8 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         {
             noti.Supply -= _Main.OnEntityInto;
             noti.Unsupply -= _Main.OnEntityLeft;
+
+            noti.Supply -= _ObservedAbility;
         }
 
         private void _Unbind(Regulus.Remoting.Ghost.IProviderNotice<IPlayer> noti)
