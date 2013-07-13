@@ -35,12 +35,12 @@ public class ExportCollider : EditorWindow
 		System.Collections.Generic.List<Regulus.Utility.OBB> obbs = new System.Collections.Generic.List<Regulus.Utility.OBB>();
 		foreach (var bc in bcs)
 		{
-		
-			float x = bc.gameObject.transform.position.x + bc.center.x;
-			float y = bc.gameObject.transform.position.z + bc.center.z;
-			float w = bc.size.x;
-			float h = bc.size.z;
-			float r = bc.gameObject.transform.rotation.eulerAngles.z;
+
+            float x = bc.gameObject.transform.position.x;
+			float y = bc.gameObject.transform.position.z;
+            float w = bc.gameObject.transform.localScale.x * bc.size.x;
+            float h = bc.gameObject.transform.localScale.z * bc.size.z;
+			float r = bc.gameObject.transform.rotation.eulerAngles.y;
 
 			Debug.Log("x" + x + " " + "y" + y + " " + "w" + w + " " + "h" + h + " " + "r" + r + " ");
 			var obb = new Regulus.Utility.OBB(x,y,w,h);
@@ -49,5 +49,9 @@ public class ExportCollider : EditorWindow
 		}
 		Debug.Log("Expoty obb count : " + obbs.Count );
 		Regulus.Utility.OBB.Write(path, obbs.ToArray());
+        foreach( var obb in Regulus.Utility.OBB.Read(path))
+        {
+            Debug.Log("x" + obb.getX() + " " + "y" + obb.getY() + " " + "w" + obb.getWidth() + " " + "h" + obb.getHeight() + " " + "r" + obb.getRotation() + " ");
+        }
 	}
 }

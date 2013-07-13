@@ -17,15 +17,11 @@ public class Player : MonoBehaviour
             
         }
     }
-	// Use this for initialization
-    Regulus.Project.TurnBasedRPG.ActorMoverAbility _ActorMoverAbility;
+	
     
 	void Start () 
     {
-        _ActorMoverAbility = new Regulus.Project.TurnBasedRPG.ActorMoverAbility(_GamePlayer.Direction);
-        _ActorMoverAbility.ActionEvent += _StartAction;
-        _ActorMoverAbility.PositionEvent += _UpdatePosition;
-
+        
         Main main = GameObject.Find("Main").GetComponent<Main>();
     
 	}
@@ -78,7 +74,7 @@ public class Player : MonoBehaviour
         if (md != _Current)
         {
             MoveCommandParam mcp = _GetMoveCommandParam(md);
-            //(_ActorMoverAbility as Regulus.Project.TurnBasedRPG.IMoverAbility).Act(mcp.ActionStatus, _GamePlayer.Speed * mcp.Speed, mcp.Direction);
+            
             _Current = md;
 
             Debug.Log("°õ¦æ°Ê§@ : " + md.ToString());
@@ -92,7 +88,7 @@ public class Player : MonoBehaviour
                 _GamePlayer.Walk(mcp.Direction);
             }
         }
-       // (_ActorMoverAbility as Regulus.Project.TurnBasedRPG.IMoverAbility).Update(_Time.Ticks , null);
+       
 	}
 
     private MoveCommandParam _GetMoveCommandParam(MoveDirection md)
