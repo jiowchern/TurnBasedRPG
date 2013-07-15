@@ -17,6 +17,7 @@ public class ActorController : MonoBehaviour {
         _Direction = UnityRegulus.Vector3(obj.MoveDirection);
         ActorAnimation.Play(obj.ActionStatue.ToString());
         Vector3 v = UnityRegulus.Vector3(obj.BeginPosition);
+        v.y = Terrain.activeTerrain.SampleHeight(v);
         gameObject.transform.position = v;
         
         _Speed = obj.Speed;
@@ -42,6 +43,8 @@ public class ActorController : MonoBehaviour {
         var pos = new Vector3();
         pos.x = offset * _Direction.x + gameObject.transform.position.x;
         pos.z = offset * _Direction.z + gameObject.transform.position.z;
+
+        pos.y = Terrain.activeTerrain.SampleHeight(gameObject.transform.position);
         gameObject.transform.position = pos;
     }
 

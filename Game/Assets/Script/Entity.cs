@@ -15,7 +15,8 @@ public class Entity : MonoBehaviour {
     } }
 	void Start () 
     {
-        gameObject.transform.position = new Vector3(Info.Position.X , 0 , Info.Position.Y);
+        float y = Terrain.activeTerrain.SampleHeight(gameObject.transform.position);
+        gameObject.transform.position = new Vector3(Info.Position.X, y, Info.Position.Y);
 	}
 	
 	// Update is called once per frame
