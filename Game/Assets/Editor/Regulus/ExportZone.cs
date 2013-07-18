@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ExportZone : EditorWindow
 {
-	private string _MapName = "";
+	
 	private Object _Map;
 
 	[UnityEditor.MenuItem("Regulus/ExportZone")]

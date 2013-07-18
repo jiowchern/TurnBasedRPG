@@ -37,10 +37,15 @@ public class ExportCollider : EditorWindow
 		{
 
             float x = bc.gameObject.transform.position.x;
-			float y = bc.gameObject.transform.position.z;
+			//float x = bc.bounds.center.x;			
+			float y = bc.gameObject.transform.position.z;			
+			//float y = bc.bounds.center.z;
             float w = bc.gameObject.transform.localScale.x * bc.size.x;
+			//float w = bc.bounds.size.x;
             float h = bc.gameObject.transform.localScale.z * bc.size.z;
+			//float h = bc.bounds.size.z;
 			float r = bc.gameObject.transform.rotation.eulerAngles.y;
+			
 
 			Debug.Log("x" + x + " " + "y" + y + " " + "w" + w + " " + "h" + h + " " + "r" + r + " ");
 			var obb = new Regulus.Utility.OBB(x,y,w,h);
@@ -49,9 +54,6 @@ public class ExportCollider : EditorWindow
 		}
 		Debug.Log("Expoty obb count : " + obbs.Count );
 		Regulus.Utility.OBB.Write(path, obbs.ToArray());
-        foreach( var obb in Regulus.Utility.OBB.Read(path))
-        {
-            Debug.Log("x" + obb.getX() + " " + "y" + obb.getY() + " " + "w" + obb.getWidth() + " " + "h" + obb.getHeight() + " " + "r" + obb.getRotation() + " ");
-        }
+
 	}
 }
