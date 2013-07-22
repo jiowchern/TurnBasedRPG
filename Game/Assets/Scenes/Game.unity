@@ -1455,6 +1455,7 @@ GameObject:
   - 33: {fileID: 214937351}
   - 65: {fileID: 214937350}
   - 23: {fileID: 214937349}
+  - 114: {fileID: 214937352}
   m_Layer: 0
   m_Name: testCCube
   m_TagString: Untagged
@@ -1513,6 +1514,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 2080532932}
   m_GameObject: {fileID: 214937347}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &214937352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 214937347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7b686e2e5399a448e206bbed7c5fc3, type: 3}
+  m_Name: 
+  EntityKind: 0
 --- !u!1 &219971813
 GameObject:
   m_ObjectHideFlags: 0
@@ -2070,6 +2082,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 307049475}
+  - 114: {fileID: 307049476}
   m_Layer: 0
   m_Name: InteractiveEntity
   m_TagString: Untagged
@@ -2115,6 +2128,17 @@ Transform:
   - {fileID: 61435624}
   - {fileID: 1077045012}
   m_Father: {fileID: 897943963}
+--- !u!114 &307049476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 307049474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3186bbacd7fe5d46b4b825d0602cd78, type: 3}
+  m_Name: 
+  Name: Ferdinand
 --- !u!1 &321873407
 GameObject:
   m_ObjectHideFlags: 0
