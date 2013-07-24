@@ -23,7 +23,8 @@ public class Player : MonoBehaviour
     {
         
         Main main = GameObject.Find("Main").GetComponent<Main>();
-    
+
+
 	}
 
     void _StartAction(long begin_time, float speed, float direction, Regulus.Types.Vector2 vector, Regulus.Project.TurnBasedRPG.ActionStatue action_status)
@@ -73,11 +74,12 @@ public class Player : MonoBehaviour
 
         if (md != _Current)
         {
+            
             MoveCommandParam mcp = _GetMoveCommandParam(md);
             
             _Current = md;
-
-            Debug.Log("°õ¦æ°Ê§@ : " + md.ToString());
+            
+            
             if (mcp.ActionStatus == Regulus.Project.TurnBasedRPG.ActionStatue.Idle)
             {
                 
@@ -140,4 +142,6 @@ public class Player : MonoBehaviour
 
         return MoveDirection.Stop;
     }
+
+    
 }

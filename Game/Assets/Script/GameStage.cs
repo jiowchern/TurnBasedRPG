@@ -46,24 +46,18 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         private void _MapUnsupply(IMapInfomation obj)
         {
-            _Main.SetMap(null);
+            
         }
         
         private void _MapSupply(IMapInfomation obj)
         {
-            _Main.SetMap(obj);
+            
         }
 
         private void _Bind(Regulus.Remoting.Ghost.IProviderNotice<IPlayer> noti)
         {
-            if (noti.Ghosts.Length > 0)
-            {
-                _Initial(noti.Ghosts[0]);
-            }
-            else
-            {
-                noti.Supply += _Initial;                
-            }
+            noti.Supply += _Initial;                
+            
         }
 
         private void _Bind(Regulus.Remoting.Ghost.IProviderNotice<IObservedAbility> noti)
@@ -193,13 +187,14 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         }
         IPlayer _Player;
         Main _Main;
+        
         void _Initial(IPlayer obj)
         {
             _Player = obj;
             var id = _Player.Id;
             _Main.SetPlayer(_Player);
             _Main.SetPlayerId(id);
-            _Player.Ready();            
+            _Player.Ready();                        
         }
 
         void _Release(Main main)

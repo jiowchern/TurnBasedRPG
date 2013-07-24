@@ -3,16 +3,15 @@ using System.Collections;
 
 public class Map : MonoBehaviour 
 {
-
-    public Regulus.Project.TurnBasedRPG.IMapInfomation Info { get; set; }
+    
 	// Use this for initialization
 	void Start () 
     {
-        if (Info != null)
-        {
-            
-        }
-        
+        var camera = UnityEngine.GameObject.FindWithTag("MainCamera");
+        SmoothFollow smoothFollow = camera.GetComponent<SmoothFollow>();
+        smoothFollow.target = CameraTarget;
+
+        Debug.Log("Reset Camera");
 	}
 
 	
@@ -21,4 +20,6 @@ public class Map : MonoBehaviour
     {
      
 	}
+
+    public Transform CameraTarget { get; set; }
 }

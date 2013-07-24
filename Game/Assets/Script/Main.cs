@@ -123,30 +123,32 @@ public class Main : MonoBehaviour
     
     internal void OnEntityInto(Regulus.Project.TurnBasedRPG.IObservedAbility obj)
     {
-        
+        Debug.Log("OnEntityInto " + obj.Name);   
         GameObject eo = UnityEngine.GameObject.Instantiate(Entity) as GameObject;
         var ent = eo.GetComponent<Entity>();
         ent.Info = obj;
 
         var ac = eo.GetComponent<ActorController>();
-        ac.Info = obj;
-        ac.Map = GetComponent<Map>();
-
+        ac.Info = obj;        
+        eo.name = obj.Name;
         if (Id == obj.Id)
         {
-            var plr = eo.AddComponent<Player>();                
+            var plr = eo.AddComponent<Player>();            
             plr._GamePlayer = _Player;
 
-            var camera = UnityEngine.GameObject.FindWithTag("MainCamera");
-            SmoothFollow smoothFollow = camera.GetComponent<SmoothFollow>();
-            smoothFollow.target = eo.transform;
+            var mapValue = _Player.QueryMap();
+            mapValue.OnValue += (map_name) =>
+            {
+                BuildMap(map_name , eo.transform);
+                //_Player.Ready();            
+            };
         }
         
     }
 
     internal void OnEntityLeft(Regulus.Project.TurnBasedRPG.IObservedAbility obj)
     {
-        
+        Debug.Log("OnEntityLeft " + obj.Name);   
         var entityObjects = from eo in UnityEngine.GameObject.FindGameObjectsWithTag("Entity")
                             let info = eo.GetComponent<Entity>().Info
                             where info.Id == obj.Id
@@ -155,7 +157,13 @@ public class Main : MonoBehaviour
         {
             
             UnityEngine.GameObject.DestroyObject(eo);
-        }        
+        }
+
+        if (Id == obj.Id)
+        {            
+            GameObject.DestroyImmediate(_MapObject);
+            _MapObject = null;
+        }
     }
 
     internal void SetPlayerId(System.Guid id)
@@ -168,13 +176,18 @@ public class Main : MonoBehaviour
     Regulus.Project.TurnBasedRPG.IPlayer _Player;
     internal void SetPlayer(Regulus.Project.TurnBasedRPG.IPlayer player)
     {
+        Debug.Log("SetPlayer " + player.Id);
+
+
+        foreach(var e in UnityEngine.GameObject.FindGameObjectsWithTag("Entity"))
+        {
+            GameObject.DestroyObject(e);
+        }
+            
         _Player = player;
     }
 
-    public void SetMap(Regulus.Project.TurnBasedRPG.IMapInfomation info)
-    {
-        GetComponent<Map>().Info = info;
-    }
+    
     Regulus.Remoting.Time _Time = new Regulus.Remoting.Time();
 
     public Regulus.Remoting.Time Time { get { return _Time;  } }
@@ -216,5 +229,18 @@ public class Main : MonoBehaviour
     void cas_CreateResult(bool obj)
     {
         ToFirst();
+    }
+
+    GameObject _MapObject;
+    internal void BuildMap(string map , Transform  target)
+    {
+        Debug.Log("BuildMap " + map);
+        if (_MapObject != null)
+            GameObject.DestroyImmediate(_MapObject);
+        _MapObject = GameObject.Instantiate(Resources.Load("scenes/" + map)) as GameObject;
+
+        Map mapComponment = _MapObject.GetComponent<Map>();
+        mapComponment.CameraTarget = target;
+        
     }
 }

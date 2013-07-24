@@ -49,5 +49,5 @@ public class ActorController : MonoBehaviour {
     }
 
     public Regulus.Project.TurnBasedRPG.IObservedAbility Info { get; set; }
-    public Map Map { get; set; }
+    
 }
