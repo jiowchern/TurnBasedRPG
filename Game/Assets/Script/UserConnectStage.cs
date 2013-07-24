@@ -7,10 +7,12 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 {
     class UserConnectStage : Regulus.Game.IStage<Regulus.Project.TurnBasedRPG.User>
     {
-        void Regulus.Game.IStage<User>.Enter(User obj)
+        Regulus.Game.StageLock Regulus.Game.IStage<User>.Enter(User obj)
         {
             var fm = obj;
             fm.Launch();
+
+            return null;
         }
 
         void Regulus.Game.IStage<User>.Leave(User obj)

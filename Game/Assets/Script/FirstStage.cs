@@ -10,7 +10,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         private string _Account = "輸入帳號";
         private string _Password = "輸入密碼";
 
-        void Regulus.Game.IStage<Main>.Enter(Main obj)
+        Regulus.Game.StageLock Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             _InputAccount = () =>
             {
@@ -39,6 +39,8 @@ namespace Regulus.Project.TurnBasedRPG.Unity
                 UnityEngine.GUILayout.EndHorizontal();
             };
             obj.DrawEvent += _InputAccount;
+
+            return null;
         }
         
         Action _InputAccount;

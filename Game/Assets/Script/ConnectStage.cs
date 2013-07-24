@@ -14,13 +14,15 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 
         }
 
-        void Regulus.Game.IStage<Main>.Enter(Main obj)
+        Regulus.Game.StageLock Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             obj.User.LinkSuccess += _UserLinkSuccess;
             obj.User.LinkFail += _UserLinkFail;
             obj.DrawEvent += obj_DrawEvent;
             obj.StartConnect();
             string _StatusMessage = "StartConnect...";
+
+            return null;
         }
 
         string _StatusMessage = "開始連線...";

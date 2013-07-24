@@ -17,12 +17,13 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             _Password = password;
         }
 
-        void Regulus.Game.IStage<Main>.Enter(Main obj)
+        Regulus.Game.StageLock Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             _Message = "接收驗證元件...";
             obj.User.VerifyProvider.Supply += VerifyProvider_Supply;
             obj.User.VerifyProvider.Unsupply += VerifyProvider_Unsupply;
             obj.DrawEvent += obj_DrawEvent;
+            return null;
         }
         string _Message = "------------------------";
         private void obj_DrawEvent()

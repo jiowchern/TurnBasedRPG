@@ -5,7 +5,8 @@ public class EntityBuilder : MonoBehaviour
 {
 	public enum Kind
 	{		
-		Static
+		Static,
+        Portal
 	};
 
 	public Kind EntityKind;

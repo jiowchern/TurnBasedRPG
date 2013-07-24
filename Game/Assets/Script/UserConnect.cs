@@ -15,8 +15,8 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         
             _Main = obj;
         }
-        
-        void Regulus.Game.IStage<WaitVerify>.Enter(WaitVerify obj)
+
+        Regulus.Game.StageLock Regulus.Game.IStage<WaitVerify>.Enter(WaitVerify obj)
         {
             _UserLinkSuccess = () =>
             {                
@@ -34,8 +34,8 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             _Main.User.LinkSuccess += _UserLinkSuccess;
             _Main.User.LinkFail += _UserLinkFail;
             _Main.StartConnect();
-            
-            
+
+            return null;
         }
 
         Action _UserLinkSuccess;

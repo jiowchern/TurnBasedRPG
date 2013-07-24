@@ -19,7 +19,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         }
 
         Action<Regulus.Project.TurnBasedRPG.IVerify> _Verify;
-        void Regulus.Game.IStage<WaitVerify>.Enter(WaitVerify obj)
+        Regulus.Game.StageLock Regulus.Game.IStage<WaitVerify>.Enter(WaitVerify obj)
         {
 
             
@@ -62,6 +62,8 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             {
                 notif.Supply += _Verify;
             }
+
+            return null;
         }
 
         void Regulus.Game.IStage<WaitVerify>.Leave(WaitVerify obj)

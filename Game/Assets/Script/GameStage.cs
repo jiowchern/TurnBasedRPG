@@ -7,7 +7,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
 {
     class GameStage : Regulus.Game.IStage<Main>
     {
-        void Regulus.Game.IStage<Main>.Enter(Main obj)
+        Regulus.Game.StageLock Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             _Main = obj;
 
@@ -18,6 +18,8 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             _Bind(obj.User.TimeProvider);
 
             obj.DrawEvent += obj_DrawEvent;
+
+            return null;
         }
 
         private void _Bind(Regulus.Remoting.Ghost.IProviderNotice<Regulus.Remoting.ITime> providerNotice)

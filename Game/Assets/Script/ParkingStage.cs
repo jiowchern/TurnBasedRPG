@@ -10,7 +10,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         Serializable.EntityLookInfomation[] _Actors = new Serializable.EntityLookInfomation[0];
         Action<Regulus.Project.TurnBasedRPG.IParking> _QueryActors;
         Regulus.Project.TurnBasedRPG.IParking _Parking;
-        void Regulus.Game.IStage<Main>.Enter(Main obj)
+        Regulus.Game.StageLock Regulus.Game.IStage<Main>.Enter(Main obj)
         {
                         
             obj.DrawEvent += obj_DrawEvent;
@@ -33,7 +33,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             {
                 notif.Supply += _QueryActors;
             }
-            
+            return null;
         }
 
         void val_OnValue(Serializable.EntityLookInfomation[] obj)

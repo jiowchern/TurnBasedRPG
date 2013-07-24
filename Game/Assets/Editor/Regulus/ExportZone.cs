@@ -19,8 +19,9 @@ public class ExportZone : EditorWindow
 		_Map = EditorGUILayout.ObjectField(new GUIContent("地圖物件"), _Map, typeof(MapInfomation), true);
 		if(GUILayout.Button("匯出") && _Map != null)
 		{
-			var path = EditorUtility.SaveFilePanel("輸出檔名", "", "01", "map");
-			_Export(_Map as MapInfomation, path);
+            var map = _Map as MapInfomation;
+            var path = EditorUtility.SaveFilePanel("輸出檔名", "", map.Name, "map");
+            _Export(map , path);
 		}
 		EditorGUILayout.EndVertical();
 	}
@@ -58,7 +59,11 @@ public class ExportZone : EditorWindow
 			Regulus.Project.TurnBasedRPG.Data.StaticEntity entity = new Regulus.Project.TurnBasedRPG.Data.StaticEntity();
 			return _Build(entity , game_object);
 		}
-		return null;
+        if (kind == EntityBuilder.Kind.Portal)
+        { 
+
+        }
+        throw new System.Exception("沒有對應的Entity Builder " + kind);		
 	}
 
 	private Regulus.Project.TurnBasedRPG.Data.Entity _Build(Regulus.Project.TurnBasedRPG.Data.Entity entity, GameObject game_object)
@@ -69,23 +74,28 @@ public class ExportZone : EditorWindow
 	private Regulus.Project.TurnBasedRPG.Data.Entity _Build(Regulus.Project.TurnBasedRPG.Data.StaticEntity entity, GameObject game_object)
 	{
 		var bc = game_object.GetComponent<BoxCollider>();
+
+        if (bc != null)
+        {
+            float x = game_object.transform.position.x;
+
+            float y = game_object.transform.position.z;
+
+            float w = game_object.transform.localScale.x * bc.size.x;
+
+            float h = game_object.transform.localScale.z * bc.size.z;
+
+            float r = game_object.transform.rotation.eulerAngles.y;
+
+            Debug.Log("x" + x + " " + "y" + y + " " + "w" + w + " " + "h" + h + " " + "r" + r + " ");
+            var obb = new Regulus.Utility.OBB(x, y, w, h);
+            obb.setRotation(r);
+
+            entity.Obb = obb;
+            return _Build(entity as Regulus.Project.TurnBasedRPG.Data.Entity, game_object);
+        }
+        throw new System.Exception("BoxCollider is null " + game_object.name);
 		
-		float x = game_object.transform.position.x;
-
-		float y = game_object.transform.position.z;
-
-		float w = game_object.transform.localScale.x * bc.size.x;
-
-		float h = game_object.transform.localScale.z * bc.size.z;
-
-		float r = game_object.transform.rotation.eulerAngles.y;
-
-		Debug.Log("x" + x + " " + "y" + y + " " + "w" + w + " " + "h" + h + " " + "r" + r + " ");
-		var obb = new Regulus.Utility.OBB(x, y, w, h);
-		obb.setRotation(r);
-		
-		entity.Obb = obb;
-		return _Build(entity as Regulus.Project.TurnBasedRPG.Data.Entity, game_object);
 	}
 	
 

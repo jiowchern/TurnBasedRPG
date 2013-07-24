@@ -295,6 +295,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400036}
+  - 114: {fileID: 11400010}
   m_Layer: 0
   m_Name: InteractiveEntity
   m_TagString: Untagged
@@ -1369,6 +1370,7 @@ GameObject:
   - 33: {fileID: 3300088}
   - 65: {fileID: 6500048}
   - 23: {fileID: 2300088}
+  - 114: {fileID: 11400008}
   m_Layer: 0
   m_Name: testCCube
   m_TagString: Untagged
@@ -12562,6 +12564,28 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e984996bae5c3f6439d4ce71a481bd17, type: 3}
   m_Name: 
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee7b686e2e5399a448e206bbed7c5fc3, type: 3}
+  m_Name: 
+  EntityKind: 0
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3186bbacd7fe5d46b4b825d0602cd78, type: 3}
+  m_Name: 
+  Name: Ferdinand
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1

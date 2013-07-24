@@ -29,11 +29,14 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             _Account = account;
             _Password = password;
         }
-        void Regulus.Game.IStage<Main>.Enter(Main obj)
+
+        Regulus.Game.StageLock Regulus.Game.IStage<Main>.Enter(Main obj)
         {
             obj.DrawEvent += obj_DrawEvent;
             _StageMachine = new Regulus.Game.StageMachine<WaitVerify>(this);
             _StageMachine.Push(new Regulus.Project.TurnBasedRPG.Unity.UserConnect(obj));
+
+            return null;
         }
 
         void obj_DrawEvent()
