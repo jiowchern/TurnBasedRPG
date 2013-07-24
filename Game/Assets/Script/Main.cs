@@ -11,8 +11,8 @@ public class Main : MonoBehaviour
     public string IpAddress;
 	void Start () 
     {
-        //IpAddress = "114.34.90.217:5055";
-        IpAddress = "127.0.0.1:5055";
+        IpAddress = "114.34.90.217:5055";
+        //IpAddress = "127.0.0.1:5055";
         User = new Regulus.Project.TurnBasedRPG.User(new Regulus.Remoting.Ghost.Config() { Address = IpAddress , Name = "TurnBasedRPGComplex" });
         
         _StageMachine = new Regulus.Game.StageMachine<Main>(this);        
@@ -240,7 +240,8 @@ public class Main : MonoBehaviour
         _MapObject = GameObject.Instantiate(Resources.Load("scenes/" + map)) as GameObject;
 
         Map mapComponment = _MapObject.GetComponent<Map>();
-        mapComponment.CameraTarget = target;
+        if (mapComponment != null)
+            mapComponment.CameraTarget = target;
         
     }
 }

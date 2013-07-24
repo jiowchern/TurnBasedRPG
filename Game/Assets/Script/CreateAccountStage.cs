@@ -27,7 +27,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
         }
         string _Message = "------------------------";
         private void obj_DrawEvent()
-        {
+        {            
             UnityEngine.GUILayout.BeginHorizontal();
             UnityEngine.GUILayout.Label(_Message);
             UnityEngine.GUILayout.EndHorizontal();

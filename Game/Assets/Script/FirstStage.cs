@@ -23,23 +23,17 @@ namespace Regulus.Project.TurnBasedRPG.Unity
                     obj.DrawEvent -= _InputAccount;
                     obj.ToWaitVerify(_Account, _Password);
                 }
-                UnityEngine.GUILayout.EndHorizontal();
-
-                UnityEngine.GUILayout.BeginHorizontal();
-                UnityEngine.GUILayout.Label("創造帳號");
-                _Account = UnityEngine.GUILayout.TextField(_Account);
-                _Password = UnityEngine.GUILayout.TextField(_Password);
-
                 if (UnityEngine.GUILayout.Button("創造"))
                 {
                     obj.DrawEvent -= _InputAccount;
                     obj.ToCreateAccount(_Account, _Password);
                 }
-
                 UnityEngine.GUILayout.EndHorizontal();
+
+
             };
             obj.DrawEvent += _InputAccount;
-
+            obj.BuildMap("Login" , null);
             return null;
         }
         
