@@ -1,0 +1,99 @@
+fileFormatVersion: 2
+guid: c0ce1ace36c89484f9b642eb7914308e
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Bone_Body_1
+    100002: Bone_Body_2
+    100004: Bone_Ear_L
+    100006: Bone_Ear_R
+    100008: Bone_Head
+    100010: Bone_Leg_BL1
+    100012: Bone_Leg_BL2
+    100014: Bone_Leg_BR1
+    100016: Bone_Leg_BR2
+    100018: Bone_Leg_FL1
+    100020: Bone_Leg_FL2
+    100022: Bone_Leg_FR1
+    100024: Bone_Leg_FR2
+    100026: Bone_MD
+    100028: Bone_MU
+    100030: Bone_Root
+    100032: Bone_Tail
+    100034: Dog
+    100036: //RootNode
+    100038: OgreMaxSceneSettings001
+    400000: Bone_Body_1
+    400002: Bone_Body_2
+    400004: Bone_Ear_L
+    400006: Bone_Ear_R
+    400008: Bone_Head
+    400010: Bone_Leg_BL1
+    400012: Bone_Leg_BL2
+    400014: Bone_Leg_BR1
+    400016: Bone_Leg_BR2
+    400018: Bone_Leg_FL1
+    400020: Bone_Leg_FL2
+    400022: Bone_Leg_FR1
+    400024: Bone_Leg_FR2
+    400026: Bone_MD
+    400028: Bone_MU
+    400030: Bone_Root
+    400032: Bone_Tail
+    400034: Dog
+    400036: //RootNode
+    400038: OgreMaxSceneSettings001
+    4300000: Dog
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Dog
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 2
+  userData: 
