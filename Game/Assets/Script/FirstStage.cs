@@ -20,24 +20,21 @@ namespace Regulus.Project.TurnBasedRPG.Unity
                 _Password = UnityEngine.GUILayout.TextField(_Password);
                 if (UnityEngine.GUILayout.Button("登入"))
                 {                    
-                    obj.DrawEvent -= _InputAccount;
                     obj.ToWaitVerify(_Account, _Password);
                 }
                 if (UnityEngine.GUILayout.Button("創造"))
                 {
-                    obj.DrawEvent -= _InputAccount;
                     obj.ToCreateAccount(_Account, _Password);
                 }
                 UnityEngine.GUILayout.EndHorizontal();
-
-
             };
             obj.DrawEvent += _InputAccount;
             obj.BuildMap("Login" , null);
             return null;
         }
-        
+
         Action _InputAccount;
+       
         void Regulus.Game.IStage<Main>.Leave(Main obj)
         {
             obj.DrawEvent -= _InputAccount;

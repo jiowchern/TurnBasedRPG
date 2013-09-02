@@ -20,8 +20,7 @@ namespace Regulus.Project.TurnBasedRPG.Unity
             obj.User.LinkFail += _UserLinkFail;
             obj.DrawEvent += obj_DrawEvent;
             obj.StartConnect();
-            string _StatusMessage = "StartConnect...";
-
+           
             return null;
         }
 
